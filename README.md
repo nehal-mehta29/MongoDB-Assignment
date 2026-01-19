@@ -103,7 +103,6 @@ Implemented in `indexes.js`:
 
 ---
 
-
 ## Learning Outcomes
 
 * MongoDB schema design
