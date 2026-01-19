@@ -9,3 +9,4 @@ const UsersSchema = {
   role: "String",
   createdAt: "Date"
 };
+
