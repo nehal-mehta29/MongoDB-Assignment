@@ -2,16 +2,37 @@
 
 //Top 5 events by ticket sales
 db.tickets.aggregate([
-  {
-    $group: {
-      _id: "$eventId",
-      totalTicketsSold: { $sum: "$quantity" }
+    {
+      $group: {
+        _id: "$eventId",
+        totalTicketsSold: { $sum: "$quantity" }
+      }
+    },
+    {
+      $sort: { totalTicketsSold: -1 }
+    },
+    {
+      $limit: 5
     }
-  },
-  {
-    $sort: { totalTicketsSold: -1 }
-  },
-  {
-    $limit: 5
-  }
+])
+
+//Total revenue earned by an organizer
+db.events.aggregate([
+    {
+      $lookup: {
+        from: "tickets",
+        localField: "eventId",
+        foreignField: "eventId",
+        as: "ticketInfo"
+      }
+    },
+    {
+      $unwind: "$ticketInfo"
+    },
+    {
+      $group: {
+        _id: "$organizerId",
+        totalRevenue: { $sum: "$ticketInfo.totalAmount" }
+      }
+    }
 ])
