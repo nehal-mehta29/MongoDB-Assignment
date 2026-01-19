@@ -44,3 +44,19 @@ db.categories.updateOne(
     { categoryId: "cat18" },
     { $set: { description: "Cultural college events" } }
 )
+
+
+
+/* ---------- DELETE OPERATIONS ---------- */
+
+//Deleting userId user14
+db.users.deleteOne({ userId: "user14" });
+
+//Deleting eventId event2
+db.events.deleteOne({ eventId: "event2" });
+
+//Deleting ticketId ticket10
+db.tickets.deleteOne({ ticketId: "ticket10" });
+
+//Deleting categoryId cat9
+db.categories.deleteOne({ categoryId: "cat9" });
