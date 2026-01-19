@@ -36,3 +36,13 @@ db.events.aggregate([
       }
     }
 ])
+
+//Number of attendees per event
+db.tickets.aggregate([
+  {
+    $group: {
+      _id: "$eventId",
+      totalAttendees: { $sum: "$quantity" }
+    }
+  }
+])
