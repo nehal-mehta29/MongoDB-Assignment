@@ -46,3 +46,16 @@ db.tickets.aggregate([
     }
   }
 ])
+
+//Events grouped by category and status
+db.events.aggregate([
+  {
+    $group: {
+      _id: {
+        category: "$category",
+        status: "$status"
+      },
+      totalEvents: { $sum: 1 }
+    }
+  }
+])
