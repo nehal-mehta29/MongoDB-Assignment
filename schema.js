@@ -29,7 +29,7 @@ const EventsSchema = {
 
 /* =============================== TICKETS COLLECTION SCHEMA =============================== */ 
 
-const TicketsSchema ={ 
+const TicketsSchema = { 
     _id: "ObjectId",
     ticketId: "String",
     eventId: "String",
@@ -38,4 +38,13 @@ const TicketsSchema ={
     quantity: "Number",
     totalAmount: "Number",
     status: "String"
+}
+
+/* =============================== CATEGORIES COLLECTION SCHEMA =============================== */
+
+const CategoriesScheman = {
+    _id: "ObjectId",
+    categoryId: "String",
+    nameId: "String",
+    description: "String",
 }
