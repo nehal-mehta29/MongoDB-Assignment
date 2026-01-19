@@ -26,3 +26,16 @@ const EventsSchema = {
     availableTickets: "Number",
     status: "String"
 }
+
+/* =============================== TICKETS COLLECTION SCHEMA =============================== */ 
+
+const TicketsSchema ={ 
+    _id: "ObjectId",
+    ticketId: "String",
+    eventId: "String",
+    userId: "String",
+    bookingDate: "String",
+    quantity: "Number",
+    totalAmount: "Number",
+    status: "String"
+}
