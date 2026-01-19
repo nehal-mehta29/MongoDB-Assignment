@@ -263,4 +263,4 @@ db.events.insertMany([
     availableTickets: 0,
     status: "completed"
   }
-]);
+])
